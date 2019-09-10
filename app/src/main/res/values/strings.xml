@@ -4,7 +4,20 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">Search</string>
+    <string name="username">Username</string>
+    <string name="posts">Posts</string>
+    <string name="_100">100</string>
+    <string name="followers">Followers</string>
+    <string name="followings">Followings</string>
+    <string name="fullname">Fullname</string>
+    <string name="bio_bio_bio_bio_bio_bio_bio_bio_bio">Bio Bio Bio Bio Bio Bio bio bio Bio</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="notification">Notification</string>
+    <string name="change_profil_picture">Change Profil Picture</string>
+    <string name="full_name">Full Name</string>
+    <string name="bio">Bio</string>
+    <string name="log_out">Log Out</string>
+    <string name="delete_account">Delete Account</string>
 </resources>

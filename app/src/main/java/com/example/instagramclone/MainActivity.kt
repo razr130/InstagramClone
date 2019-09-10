@@ -18,36 +18,39 @@ import com.example.instagramclone.Fragments.SearchFragment
 class MainActivity : AppCompatActivity() {
 
 
-    internal var selectedfragment: Fragment? = null
-
     private val onNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
 
             when (item.itemId) {
                 R.id.navigation_home -> {
 
-                    selectedfragment = HomeFragment()
+                    movetofragment(HomeFragment())
+                    return@OnNavigationItemSelectedListener true
 
                 }
                 R.id.navigation_search -> {
+                    movetofragment(SearchFragment())
+                    return@OnNavigationItemSelectedListener true
 
-                    selectedfragment = SearchFragment()
                 }
                 R.id.navigation_add -> {
+
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_notifications -> {
-                    selectedfragment = NotificationFragment()
+                    movetofragment(NotificationFragment())
+
+                    return@OnNavigationItemSelectedListener true
+
                 }
                 R.id.navigation_profile -> {
-                    selectedfragment = ProfileFragment()
+                    movetofragment(ProfileFragment())
+                    return@OnNavigationItemSelectedListener true
+
                 }
 
             }
-            if(selectedfragment !=null){
-                supportFragmentManager.beginTransaction().replace(R.id.Frame_main,selectedfragment!!).commit()
 
-            }
             false
         }
 
@@ -59,7 +62,12 @@ class MainActivity : AppCompatActivity() {
 
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        supportFragmentManager.beginTransaction().replace(R.id.Frame_main,HomeFragment()).commit()
+        movetofragment(HomeFragment())
+    }
 
+    private fun movetofragment(fragment: Fragment) {
+        val fragmenttranst = supportFragmentManager.beginTransaction()
+        fragmenttranst.replace(R.id.Frame_main, fragment)
+        fragmenttranst.commit()
     }
 }
